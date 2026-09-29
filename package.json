@@ -1,0 +1,16 @@
+{
+  "name": "realestateapp-online",
+  "version": "1.1.0",
+  "private": true,
+  "description": "املاک من - نسخه آنلاین با حساب، پکیج، اعتبار AI، ملک، درخواست، علاقه‌مندی و پنل مدیریت",
+  "main": "server.js",
+  "scripts": {"start":"node server.js","dev":"node server.js"},
+  "dependencies": {
+    "bcryptjs":"^3.0.2",
+    "better-sqlite3":"^12.4.1",
+    "cors":"^2.8.5",
+    "dotenv":"^17.2.2",
+    "express":"^5.2.1",
+    "jsonwebtoken":"^9.0.2"
+  }
+}
