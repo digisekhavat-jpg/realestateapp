@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="املاک من؛ نمونه اولیه رابط کاربری برای جست‌وجو و نمایش ملک">
+<title>املاک من | جست‌وجوی ملک</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#172033;--muted:#687386;--brand:#2563eb;--brand2:#1d4ed8;--line:#e7eaf0;--shadow:0 18px 50px rgba(23,32,51,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}
+header{background:linear-gradient(135deg,#102a56,#2563eb);color:#fff;padding:18px 6% 70px}.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between}.logo{font-size:24px;font-weight:900}.logo span{opacity:.7;font-size:13px;margin-right:8px}.nav a{font-size:14px;margin-right:22px;opacity:.92}.hero{max-width:1180px;margin:65px auto 0}.hero h1{font-size:clamp(30px,5vw,54px);margin:0 0 15px}.hero p{max-width:650px;line-height:2;color:#dbe8ff;margin:0}.search{max-width:1180px;margin:-35px auto 0;padding:0 20px;position:relative}.searchbox{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;padding:18px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px}.field{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fafbfc}.field small{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.field select{border:0;background:transparent;width:100%;font:inherit;color:var(--text);outline:0}.btn{border:0;border-radius:14px;padding:0 24px;background:var(--brand);color:#fff;font:inherit;font-weight:800;cursor:pointer}.btn:hover{background:var(--brand2)}
+main{max-width:1180px;margin:42px auto;padding:0 20px}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.section-head h2{margin:0}.count{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 28px rgba(23,32,51,.05);transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.photo{height:190px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;color:#1e40af;font-size:42px}.body{padding:18px}.tag{display:inline-block;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}.card h3{margin:12px 0 7px;font-size:18px}.meta{color:var(--muted);font-size:13px}.price{margin-top:15px;font-weight:900;font-size:17px}.features{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.features span{background:#f4f5f7;border-radius:9px;padding:7px 9px;font-size:11px;color:#566174}
+.info{margin-top:55px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px}.info h2{margin-top:0}.info p{line-height:2;color:var(--muted)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{background:#f8fafc;border-radius:16px;padding:20px}.stat b{display:block;font-size:25px;margin-bottom:6px}.stat span{color:var(--muted);font-size:12px}
+footer{text-align:center;color:var(--muted);padding:40px 20px;font-size:12px}
+@media(max-width:850px){.searchbox{grid-template-columns:1fr 1fr}.btn{min-height:54px}.grid{grid-template-columns:1fr 1fr}.info{grid-template-columns:1fr}}
+@media(max-width:560px){header{padding-bottom:55px}.nav a{display:none}.hero{margin-top:45px}.searchbox{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.photo{height:180px}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav"><div class="logo">املاک من <span>REAL ESTATE</span></div><div><a href="#listings">ملک‌ها</a><a href="#about">درباره پروژه</a></div></nav>
+  <section class="hero"><h1>خانه‌ای که دنبالش هستی، پیدا کن.</h1><p>یک رابط کاربری ساده و مدرن برای جست‌وجو و نمایش آگهی‌های ملکی؛ طراحی شده به‌عنوان یک پروژه شخصی و نمونه‌کار دیجیتال.</p></section>
+</header>
+<section class="search">
+  <div class="searchbox">
+    <div class="field"><small>نوع معامله</small><select id="deal"><option value="all">همه</option><option value="sale">خرید</option><option value="rent">اجاره</option></select></div>
+    <div class="field"><small>شهر</small><select id="city"><option value="all">همه شهرها</option><option>اصفهان</option><option>تهران</option><option>شیراز</option></select></div>
+    <div class="field"><small>نوع ملک</small><select id="type"><option value="all">همه</option><option>آپارتمان</option><option>خانه</option><option>ویلا</option></select></div>
+    <button class="btn" onclick="filterCards()">جست‌وجو</button>
+  </div>
+</section>
+<main>
+  <section id="listings">
+    <div class="section-head"><h2>آگهی‌های پیشنهادی</h2><span class="count" id="count">۳ مورد</span></div>
+    <div class="grid" id="grid">
+      <article class="card" data-deal="sale" data-city="اصفهان" data-type="آپارتمان"><div class="photo">🏢</div><div class="body"><span class="tag">فروش</span><h3>آپارتمان مدرن در چهارباغ</h3><div class="meta">اصفهان · چهارباغ بالا</div><div class="features"><span>۱۲۰ متر</span><span>۲ خواب</span><span>پارکینگ</span></div><div class="price">۶٬۸۰۰٬۰۰۰٬۰۰۰ تومان</div></div></article>
+      <article class="card" data-deal="rent" data-city="تهران" data-type="آپارتمان"><div class="photo">🏙️</div><div class="body"><span class="tag">اجاره</span><h3>واحد نورگیر و خوش‌نقشه</h3><div class="meta">تهران · یوسف‌آباد</div><div class="features"><span>۹۰ متر</span><span>۱ خواب</span><span>آسانسور</span></div><div class="price">رهن ۵۰۰ میلیون تومان</div></div></article>
+      <article class="card" data-deal="sale" data-city="شیراز" data-type="خانه"><div class="photo">🏠</div><div class="body"><span class="tag">فروش</span><h3>خانه حیاط‌دار خانوادگی</h3><div class="meta">شیراز · معالی‌آباد</div><div class="features"><span>۱۸۰ متر</span><span>۳ خواب</span><span>حیاط</span></div><div class="price">۹٬۲۰۰٬۰۰۰٬۰۰۰ تومان</div></div></article>
+    </div>
+  </section>
+  <section class="info" id="about">
+    <div><h2>درباره «املاک من»</h2><p>این صفحه یک نمونه اولیه برای نمایش توانایی طراحی و پیاده‌سازی رابط کاربری وب است. تمرکز پروژه روی ساخت یک تجربه ساده، خوانا و واکنش‌گرا برای نمایش آگهی‌های ملکی بوده است.</p><button class="btn" style="height:50px" onclick="alert('این بخش در نسخه نمایشی فعال است.')">مشاهده نسخه نمایشی</button></div>
+    <div class="stats"><div class="stat"><b>۳</b><span>نمونه آگهی</span></div><div class="stat"><b>۱۰۰٪</b><span>واکنش‌گرا</span></div><div class="stat"><b>RTL</b><span>طراحی فارسی</span></div><div class="stat"><b>UI</b><span>رابط کاربری مدرن</span></div></div>
+  </section>
+</main>
+<footer>املاک من · پروژه شخصی و نمونه‌کار طراحی وب</footer>
+<script>
+function filterCards(){
+ const deal=document.getElementById('deal').value, city=document.getElementById('city').value, type=document.getElementById('type').value;
+ let n=0;
+ document.querySelectorAll('.card').forEach(c=>{
+   const ok=(deal==='all'||c.dataset.deal===deal)&&(city==='all'||c.dataset.city===city)&&(type==='all'||c.dataset.type===type);
+   c.style.display=ok?'block':'none'; if(ok)n++;
+ });
+ document.getElementById('count').textContent=n+' مورد';
+}
+</script>
+</body>
+</html>
